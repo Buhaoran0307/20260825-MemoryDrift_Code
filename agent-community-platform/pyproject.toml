@@ -1,0 +1,16 @@
+[project]
+name = "agent-community-platform"
+version = "0.1.0"
+description = "Multi-agent memory experiment platform"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "PyYAML>=6.0,<7.0",
+    "jsonschema>=4.0,<5.0",
+    "cryptography>=45.0,<47.0",
+    "langchain-openai>=0.3.1,<2.0",
+    "langmem==0.0.30",
+    "chromadb>=0.5.23",
+    "sentence-transformers>=3.3.1",
+    "agentic-memory @ git+https://github.com/agiresearch/a-mem.git@ceffb860f0712bbae97b184d440df62bc910ca8d",
+]

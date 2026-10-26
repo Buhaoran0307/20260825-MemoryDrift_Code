@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Experiment Platform</title>
+  <link rel="stylesheet" href="/platform-static/platform.css" />
+  <style>
+    /* Prevent the hard-coded fallback copy from flashing before i18n loads. */
+    body { visibility: hidden; }
+    body.i18n-ready { visibility: visible; }
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="app-nav">
+      <a class="brand" href="/">
+        <span class="brand-mark">AC</span>
+        <span>
+          <strong>Agent Community</strong>
+          <small data-i18n="app.subtitle">Experiment Platform</small>
+        </span>
+      </a>
+      <nav aria-label="Platform navigation" data-i18n-aria-label="nav.label">
+        <a href="/" data-nav="dashboard" data-i18n="nav.dashboard">Overview</a>
+        <a href="/experiments" data-nav="experiments" data-i18n="nav.experiments">Experiments</a>
+        <a href="/settings" data-nav="settings" data-i18n="settings.nav">Default settings</a>
+        <a href="/resources" data-nav="resources" data-i18n="nav.resources">Resources</a>
+        <a href="/memories" data-nav="memories" data-i18n="memoryWorkspace.title">Memory workspace</a>
+        <a href="/memory-accounts" data-nav="memory-accounts" data-i18n="memoryWorkspace.accounts">Cloud memory accounts</a>
+        <a href="/comparisons" data-nav="comparisons" data-i18n="nav.comparisons">Results comparison</a>
+        <a href="/runs" data-nav="runs" data-i18n="nav.runs">Runs</a>
+      </nav>
+      <div class="nav-foot">
+        <span class="health-status">
+          <span class="health-dot" id="healthDot"></span>
+          <span id="healthText" data-i18n="health.connecting">Connecting</span>
+        </span>
+      </div>
+    </aside>
+
+    <main id="main" tabindex="-1">
+      <div class="loading-state">
+        <strong data-i18n="common.loading">Loading the experiment platform</strong>
+      </div>
+    </main>
+  </div>
+
+  <dialog id="detailDialog" class="detail-dialog">
+    <header>
+      <div id="dialogTitle"></div>
+      <button class="icon-button" type="button" id="closeDialog" aria-label="Close" data-i18n-aria-label="common.close">&times;</button>
+    </header>
+    <div id="dialogBody" class="dialog-body"></div>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="/platform-static/locales/en.js" defer></script>
+  <script src="/platform-static/i18n.js" defer></script>
+  <script src="/platform-static/quick_settings.js" defer></script>
+  <script src="/platform-static/experiment_transfer.js" defer></script>
+  <script src="/platform-static/experiment_group_operations.js" defer></script>
+  <script src="/platform-static/memory_workspace.js" defer></script>
+  <script src="/platform-static/platform.js" defer></script>
+</body>
+</html>

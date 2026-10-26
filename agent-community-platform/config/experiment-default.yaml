@@ -1,0 +1,48 @@
+version: 1
+
+run:
+  name: file-memory-experiment
+  id: null
+  seed: 20260806
+
+backend:
+  api_base_env: AGENT_COMMUNITY_API_BASE
+  api_key_env: AGENT_COMMUNITY_API_KEY
+  mem0_api_key_env: MEM0_API_KEY
+  model_env: AGENT_COMMUNITY_MODEL
+  concurrency: 10
+  max_transient_retries: 8
+  retry_backoff_seconds: 2
+  max_retry_wait_seconds: 60
+  min_request_interval_seconds: 0.5
+  timeout_seconds: 90
+  temperature: 0.2
+  max_tokens: 8000
+
+environment:
+  type: moltnet_forum
+  hide_speaker: true
+  forum:
+    selection: file
+
+agents:
+  count: 1
+  require_identity: true
+  seed: 20260806
+  history_limit: 100
+
+memory:
+  strategy: langmem_official
+  model: gpt-5.6-luna
+  options: {}
+
+simulation:
+  mode: read_only
+  rounds: 1
+  read_only_agent_id: null
+  tools: []
+
+output:
+  root_dir: output/experiments/experiment
+  save_thread_after_each_round: true
+  save_memory_after_each_round: true

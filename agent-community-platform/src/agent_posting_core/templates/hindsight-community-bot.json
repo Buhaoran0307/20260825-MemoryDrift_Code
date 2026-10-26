@@ -1,0 +1,8 @@
+{
+  "version": "1",
+  "bank": {
+    "retain_mission": "Extract the persona and norms of each channel or community (its purpose, tone, in-jokes, rules), per-person preferences and facts, who's who in the group, ongoing requests, and commitments made. Attribute everything to the right person and the right channel. Ignore bot commands, join/leave noise, and pure small talk.",
+    "enable_observations": true,
+    "observations_mission": "Track the persona and norms of each channel or community and how it should be engaged, plus stable facts about individual members (preferences, role, how they like to interact), and how both evolve."
+  }
+}
